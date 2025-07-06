@@ -24,8 +24,8 @@ module uart_core #(
   assign result = value_reg;
 
   // States
-  localparam integer IDLE = 1'b0;
-  localparam integer RECEIVING = 1'b1;
+  localparam IDLE = 1'b0;
+  localparam RECEIVING = 1'b1;
   reg state = IDLE;
   assign done = state == IDLE;
 
