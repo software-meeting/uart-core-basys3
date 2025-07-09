@@ -56,8 +56,7 @@ module uart_core #(
         value_reg <= value_reg;
       end
     end else if (state == RECEIVING) begin
-      // value_reg[bit_count] <= txd;
-      value_reg <= value_reg | (txd << (7 - bit_count));
+      value_reg[7-bit_count] = txd;
       if (bit_count == 0) begin
         state <= IDLE;
       end
